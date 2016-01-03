@@ -94,6 +94,8 @@ namespace DuplicateFileDetector
                 TotalFilesLabel.Content = null;
                 TotalTimeLabel.Content = null;
 
+                DataModel.Clear();
+
                 _dbEngine.DeleteTable(@"FileDB");
                 _dbEngine.CreateTable(DBQueries.FileTableCreateQuery);
 
