@@ -76,6 +76,8 @@ SELECT s.Name, s.Size, s.Hash, s.lastmodtime, s.directory
                 command.Parameters.AddWithValue("@Directory", fileInfo.DirectoryName);
                 command.Parameters.AddWithValue("@LastModTime", fileInfo.LastWriteTime.Ticks);
 
+                command.Prepare();
+
                 command.ExecuteNonQuery();
             }
             return 0;
